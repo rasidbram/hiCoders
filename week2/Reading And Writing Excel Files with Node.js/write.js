@@ -2,20 +2,13 @@
 const XLSX = require("xlsx");
 const {data} = require("./data");
 
-// Read the file into memory
-const workbook = XLSX.readFile("documents.xlsx");
+/* make the worksheet */
+var ws = XLSX.utils.json_to_sheet(data);
 
-// Convert the XLSX to JSON
-let worksheets = [];
-for (const sheetName of workbook.SheetNames) {
-	worksheets[sheetName] = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
-}
+/* add to workbook */
+var wb = XLSX.readFile("document.xlsx");
 
-// Modify the XLSX
-for (let i = 0; i < data.length; i++) {
-	worksheets.Sheet1.push(data[i]);
-}
+XLSX.utils.book_append_sheet(wb, ws, "Sheet3");
 
-// Update the XLSX file
-XLSX.utils.sheet_add_json(workbook.Sheets["Sheet1"], worksheets.Sheet1);
-XLSX.writeFile(workbook, "documents.xlsx");
+/* generate an XLSX file */
+XLSX.writeFile(wb, "document.xlsx");
