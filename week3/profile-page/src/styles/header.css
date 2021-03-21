@@ -1,0 +1,14 @@
+.jobInfo {
+    font-family: "Rubik Mono One", sans-serif;
+    text-align: center;
+    font-size: 30px;
+    background-position: center;
+    background-size: 130%;
+    background-image: linear-gradient(#ffffff, #35a6ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 7px;
+    letter-spacing: 0.27em;
+
+}

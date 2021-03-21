@@ -1,0 +1,16 @@
+.navbar {
+    background-color: #35a6ff;
+
+}
+
+#navbarNav a {
+    color: white;
+    font-size: 1.5rem;
+    float: right;
+
+}
+
+.nav-link {
+    margin-left: 60px;
+
+}
